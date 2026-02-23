@@ -1,50 +1,237 @@
-/* Logo alignment */
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #111;
+}
+
+/* BRAND COLORS */
+:root {
+    --blue: #0066ff;
+    --blue-light: #4da3ff;
+    --dark: #1b1e24;
+    --gray: #e5e5e5;
+    --light: #ffffff;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 60px;
+    background: var(--light);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+nav ul a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #222;
+    transition: 0.2s;
+}
+
+nav ul a:hover, 
+nav ul a.active {
+    color: var(--blue);
+}
+
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo-img {
     width: 45px;
-    height: auto;
 }
 
-/* Brand colors */
-:root {
-    --blue: #007BFF;
-    --cyan: #00C2E7;
-    --dark: #2C2F39;
-    --light: #F4F4F4;
-    --gray: #EDEDED;
+/* HERO SECTION */
+.hero {
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(135deg, #0066ff, #00b4ff);
+    color: white;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Portfolio preview */
-.portfolio-preview {
-    padding: 60px;
+.hero-inner {
+    animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 28px;
+    opacity: 0.95;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    background: var(--blue-light);
+}
+
+.btn.secondary {
+    background: white;
+    color: var(--blue);
+}
+
+.btn.big {
+    padding: 14px 34px;
+    font-size: 18px;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px 60px;
     text-align: center;
 }
 
-.portfolio-img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 12px;
-    margin: 20px 0;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 800;
 }
 
-/* Full portfolio page */
-.portfolio-page img {
+.feature-grid {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.feature {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: 0.25s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+/* PORTFOLIO PREVIEW */
+.portfolio-preview {
+    text-align: center;
+    padding: 70px;
+}
+
+.portfolio-img {
     width: 85%;
     max-width: 900px;
-    border-radius: 14px;
-    margin-top: 25px;
-    box-shadow: 0 3px 20px rgba(0,0,0,0.18);
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-/* Policies page */
-.policies {
-    padding: 60px;
-    max-width: 800px;
-    margin: auto;
+.view-more {
+    margin-top: 15px;
+}
+
+/* CTA SECTION */
+.cta {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--blue);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #eee;
+    margin-top: 50px;
+}
+
+/* ANIMATIONS */
+.fade-in {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        padding: 18px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: none;
+    }
 }
