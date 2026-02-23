@@ -1,0 +1,50 @@
+/* Logo alignment */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+}
+
+/* Brand colors */
+:root {
+    --blue: #007BFF;
+    --cyan: #00C2E7;
+    --dark: #2C2F39;
+    --light: #F4F4F4;
+    --gray: #EDEDED;
+}
+
+/* Portfolio preview */
+.portfolio-preview {
+    padding: 60px;
+    text-align: center;
+}
+
+.portfolio-img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* Full portfolio page */
+.portfolio-page img {
+    width: 85%;
+    max-width: 900px;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.18);
+}
+
+/* Policies page */
+.policies {
+    padding: 60px;
+    max-width: 800px;
+    margin: auto;
+}
