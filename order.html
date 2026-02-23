@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Place Order - Elite Web Creations</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function updatePrice(){
+    const prices = {basic:20, business:40, ecommerce:60};
+    let pkg = document.getElementById("package").value;
+    document.getElementById("priceDisplay").innerText = "$"+prices[pkg];
+}
+</script>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">
+<img src="logo.png" alt="Logo">
+<h1>Elite Web Creations</h1>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="order.html" class="active">Order</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="policies.html">Policies</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="page-header">
+<h2>Place Your Order</h2>
+</section>
+
+<section class="contact-form" style="width:55%;">
+<form action="#" method="POST">
+<label>Your Name</label>
+<input type="text" name="name" required>
+<label>Your Email</label>
+<input type="email" name="email" required>
+<label>Select Package</label>
+<select id="package" name="package" onchange="updatePrice()" required>
+<option value="basic">Basic Website — $20</option>
+<option value="business">Business Website — $40</option>
+<option value="ecommerce">E-Commerce Website — $60</option>
+</select>
+<p><strong>Total Price: <span id="priceDisplay">$20</span></strong></p>
+<label>Project Details</label>
+<textarea name="details" rows="5" placeholder="Describe your project..." required></textarea>
+<button type="submit" class="button">Place Order</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Elite Web Creations — All Rights Reserved</p>
+</footer>
+
+<script>updatePrice();</script>
+</body>
+</html>
